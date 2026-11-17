@@ -7593,7 +7593,6 @@ export const SessionOutboundMessageSchema = z.discriminatedUnion("type", [
   AgentMetadataUpdateResponseSchema,
   WorkspaceMetadataUpdateResponseSchema,
   WorkspacePinSetResponseSchema,
-  AgentHistorySyncResponseSchema,
   WorkspaceBaseBranchSetResponseSchema,
   WorkspaceRecoveryInspectResponseSchema,
   WorkspaceRecoveryRestoreResponseSchema,
@@ -7701,6 +7700,8 @@ export const SessionOutboundMessageSchema = z.discriminatedUnion("type", [
   LoopStopResponseSchema,
   DaemonUpdateProgressMessageSchema,
   DaemonUpdateResponseSchema,
+  // Appended last: generated validators in released packages address messages by position.
+  AgentHistorySyncResponseSchema,
 ]);
 
 export type SessionOutboundMessage = z.infer<typeof SessionOutboundMessageSchema>;
